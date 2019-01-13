@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Welcome to Beagle!</title>
+    <title>Welcome to Beetle!</title>
     
     <meta charset="UTF-8">
     <meta name="description" content="Search the web for sites images, gifs, memes etc">
