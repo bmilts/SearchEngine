@@ -1,4 +1,7 @@
 <?php
+include("config.php");
+include("classes/SiteResultsProvider.php");
+
     // Only take term value if it exists
     if(isset($_GET['term'])) {
         $term = $_GET['term'];
@@ -20,7 +23,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Welcome to the Sweet Society!</title>
+    <title>Welcome to Beagle!</title>
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 </head>    
 <body>
@@ -57,21 +60,27 @@
                             Images
                         </a>
                     </li>
-                    <li class="<?php echo $type == 'gifs' ? 'active' : '' ?>">
-                        <a href='<?php echo "search.php?term=$term&type=gifs"; ?>'>
-                            Gifs
-                        </a>
-                    </li>
-                    <li class="<?php echo $type == 'crypto' ? 'active' : '' ?>">
-                        <a href='<?php echo "search.php?term=$term&type=crypto"; ?>'>
-                            Crypto
-                        </a>
-                    </li>
-                    
                 </ul>
             </div>
             
         </div>
+        
+        <div class="mainResultsSection">
+            
+            <?php 
+            
+            $resultsProvider = new SiteResultsProvider($con);
+            
+            $numResults = $resultsProvider->getNumResults($term);
+            
+            echo "<p class='resultsCount'>$numResults results found</p>";
+            
+            echo $resultsProvider->getResultsHtml(1, 20, $term);
+            
+            ?>
+            
+        </div>
+        
     </div>
 </body>
 </html>

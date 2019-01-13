@@ -21,9 +21,24 @@ class DomDocumentParser {
         @$this->doc->loadHTML(file_get_contents($url, false, $context));
     }
     
-    public function getlinks() {
+    public function getLinks() {
         //  Get a tag or links
         return $this->doc->getElementsByTagName("a");
+    } 
+    
+    public function getTitleTags() {
+        //  Get title tag
+        return $this->doc->getElementsByTagName("title");
+    } 
+    
+    public function getMetaTags() {
+        //  Get title tag
+        return $this->doc->getElementsByTagName("meta");
+    } 
+    
+    public function getImages() {
+        //  Get title tag
+        return $this->doc->getElementsByTagName("img");
     } 
     
 }
