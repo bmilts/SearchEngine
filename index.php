@@ -26,6 +26,17 @@
                     <input class="searchButton" type="submit" value="Search"/>
                 
                 </form>
+                
+                <form action="crawl.php" method="GET">
+                    
+                    <input class="crawlBox" type="text" name="crawl"/>
+                    <input class="crawlButton" type="submit" value="Start Crawling"/>
+                    <!-- Change below when uploading to heroku -->
+                    <button class="cancelButton" type="cancel" onclick="window.location='https://searchengine-bmilts.c9users.io/crawl.php';return false;">Stop Crawling</button>
+                    <input class="deleteDB" type="submit" value="Clear Database"/>
+                    <!-- https://stackoverflow.com/questions/28925812/button-to-clear-mysql-table-of-data -->
+
+                </form>
             </div>
         </div>
     </div>

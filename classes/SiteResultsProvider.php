@@ -45,36 +45,35 @@ class SiteResultsProvider {
         $query->execute();
         
         $resultsHtml = "<div class='siteResults'>";
-        
-        while($row = $query->fetch(PDO::FETCH_ASSOC)){
-            
-            $id = $row["id"];
-            $url = $row["url"];
-            $title = $row["title"];
-            $description = $row["description"];
-            
-            // Trim title to 55 chars
-            $title = $this->trimField($title, 55);
-            $description = $this->trimField($description, 230);
-            // $url = $this->trimField($url, 100);
-            
-            
-            $resultsHtml .= "<div class='resultContainer'>
-            
-                                <h3 class='title'>
-                                    <a class='result' href='$url'>
-                                        $title
-                                    <a/>
-                                </h3>
-                                <span class='url'>$url</span>
-                                <span class='description'>$description</span>
-                            
-                            </div>";
-        }
-        
-        $resultsHtml .="</div>";
-    
-        return $resultsHtml;
+
+
+		while($row = $query->fetch(PDO::FETCH_ASSOC)) {
+			$id = $row["id"];
+			$url = $row["url"];
+			$title = $row["title"];
+			$description = $row["description"];
+
+			$title = $this->trimField($title, 55);
+			$description = $this->trimField($description, 230);
+			
+			$resultsHtml .= "<div class='resultContainer'>
+
+								<h3 class='title'>
+									<a class='result' href='$url' data-linkId='$id'>
+										$title
+									</a>
+								</h3>
+								<span class='url'>$url</span>
+								<span class='description'>$description</span>
+
+							</div>";
+
+		}
+
+
+		$resultsHtml .= "</div>";
+
+		return $resultsHtml;
     }
     
     private function trimField($string, $charLimit){

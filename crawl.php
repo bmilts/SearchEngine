@@ -1,4 +1,5 @@
 <?php
+include("index.php");
 include("config.php");
 include("classes/DomDocumentParser.php");
 
@@ -217,7 +218,7 @@ function followLinks($url) {
             getDetails($href);
         } 
         // COMMENT IN PRODUCTION WILL ALLOW ALL LINKS ETC
-        else return;
+        // else return;
     }
     
     // Remove from array
@@ -229,7 +230,7 @@ function followLinks($url) {
     
 }
 
-$startUrl = "https://www.bbc.co.uk/";
+$startUrl = $_GET['crawl'];
 followLinks($startUrl);
 
 ?>

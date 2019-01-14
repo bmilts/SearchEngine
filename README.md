@@ -18,3 +18,9 @@ PHPMyAdmin Installation complete. You can log in at: https://searchengine-bmilts
 https://community.c9.io/t/connecting-php-to-mysql/1606    
 
 https://phpdelusions.net/pdo
+
+TODO
+1. Complete last two sections
+2. Complete delete image database button
+2. Add styling on crwaling options
+3. Change database and load to heroku

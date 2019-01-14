@@ -26,6 +26,7 @@ include("classes/SiteResultsProvider.php");
 <head>
     <title>Welcome to Beetle!</title>
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>    
 <body>
     <div class="wrapper">
@@ -101,12 +102,15 @@ include("classes/SiteResultsProvider.php");
                 // Work out current page, floor takes lower value oppositte of ceil
                 $currentPage = $page - floor($pagesToShow / 2); 
                 
-                // 
                 if($currentPage < 1) {
                     $currentPage = 1;
                 }
                 
-                while($pagesLeft != 0){
+                if($currentPage + $pagesLeft > $numPages + 1){
+                    $currentPage = $numPages + 1 - $pagesLeft;
+                }
+                
+                while($pagesLeft != 0 && $currentPage <= $numPages){
                     
                     // Current page not clickable
                     if($currentPage == $page){
@@ -140,5 +144,6 @@ include("classes/SiteResultsProvider.php");
         </div>
         
     </div>
+    <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 </html>
