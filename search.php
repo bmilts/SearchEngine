@@ -1,6 +1,7 @@
 <?php
 include("config.php");
 include("classes/SiteResultsProvider.php");
+include("classes/ImageResultsProvider.php");
 
     // Only take term value if it exists
     if(isset($_GET['term'])) {
@@ -34,13 +35,14 @@ include("classes/SiteResultsProvider.php");
             <div class="headerContent">
                 <div class="logoContainer">
                     <a href="index.php">
-                        <img src="assets/images/beagle.png">
+                        <img src="assets/images/beagle.png" title="Back to Main Page">
                     </a>
                 </div>
                 
                 <div class="searchContainer">
                     <form action="search.php" method="GET">
                         <div class="searchBarContainer">
+                            <input type="hidden" name="type" value="<?php echo $type; ?>">
                             <input class="searchBox" type="text" name="term" value="<?php echo $term; ?>"/>
                             <button class="searchButton">
                                 <img src="assets/images/icons/searchIcon.png"></img>
@@ -71,8 +73,14 @@ include("classes/SiteResultsProvider.php");
             
             <?php 
             
-            $resultsProvider = new SiteResultsProvider($con);
-            $pageSize = 20;
+            if($type == "sites"){
+                $resultsProvider = new SiteResultsProvider($con);
+                $pageSize = 20;
+            } else {
+                $resultsProvider = new ImageResultsProvider($con);
+                $pageSize = 30;
+            }
+            
             
             $numResults = $resultsProvider->getNumResults($term);
             
