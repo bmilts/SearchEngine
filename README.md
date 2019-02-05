@@ -1,26 +1,32 @@
+# PHP Search Engine
+https://miltonsmind.000webhostapp.com/
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+## Description
 
 
-Heroku PHP https://stackoverflow.com/questions/37875639/can-php-applications-hosted-on-heroku-be-edited-using-cloud9
-Mysql to heroku export database at 7.21 mins - https://www.youtube.com/watch?v=iRgSQTmA-N4
+## Screenshots
 
-// mysql-ctl start
-PHPMyAdmin Installation complete. You can log in at: https://searchengine-bmilts.c9users.io/phpmyadmin with the following username (and blank password):
+<img src="/"  width="325" /> 
 
-       Username: bmilts
+## Features
 
-https://community.c9.io/t/connecting-php-to-mysql/1606    
+* 
+* 
+*  
 
-https://phpdelusions.net/pdo
+## Built With
 
-TODO
-1. Complete last two sections
-2. Complete delete image database button
-2. Add styling on crwaling options
-3. Change database and load to heroku
+* []()
+* []()
+* []()
+* []()
+* []()
+
+## License
+TBD
+
+## Project Information
+- category: Web Site
+- author: Brendan Milton
+- description: PHP web site, built to learn more about php, mysql and web technologies
+- stack: 
